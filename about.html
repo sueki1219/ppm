@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ブリーダー向けホームページテンプレート s1_breeder1</title>
+<meta name="copyright" content="Nikukyu-Punch" />
+<meta name="description" content="ここにサイト説明を入れます" />
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+
+
+<div id="header">
+<div>
+<h1>h1テキスト入力場所です。titleタグの次に重要なので念入りに考えてワードを盛り込みましょう。</h1>
+<img src="images/mainimg.jpg" width="930" height="180" />
+</div>
+</div>
+<!--/header-->
+
+
+<div id="container">
+
+
+<ul id="menu">
+<li><a href="index.html"><img src="images/menu_01.gif" alt="HOME" width="186" height="50" id="Image1" onmouseover="MM_swapImage('Image1','','images/menu_over_01.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="about.html"><img src="images/menu_02.gif" alt="ABOUT" name="Image2" width="184" height="50" id="Image2" onmouseover="MM_swapImage('Image2','','images/menu_over_02.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="puppy.html"><img src="images/menu_03.gif" alt="PUPPY" width="184" height="50" id="Image3" onmouseover="MM_swapImage('Image3','','images/menu_over_03.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="photo.html"><img src="images/menu_04.gif" alt="PHOTO" width="184" height="50" id="Image4" onmouseover="MM_swapImage('Image4','','images/menu_over_04.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="contact.html"><img src="images/menu_05.gif" alt="CONTACT" width="186" height="50" id="Image5" onmouseover="MM_swapImage('Image5','','images/menu_over_05.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+</ul>
+
+
+<div id="main">
+
+<h2>ホームページビルダーをご利用の方へ（重要）</h2>
+
+<p>ビルダーでテンプレートを開いた場合、htmlの１行目を勝手に変換されてテンプレートが崩れる原因になるので<a href="http://nikukyu-punch.com/file/builder/" target="_blank">こちら</a>を必ずお読み下さい。もしご自身のパソコンで見た時に正常に見えても、他の環境で崩れて見える場合があります。<br />
+もしこのページをビルダーで開いて見ている場合、既にhtmlの１行目が自動変換されている可能性大です。修復方法についても上記ページをご覧下さい。</p>
+
+<h2>文字色やサイズなどの設定は…</h2>
+
+<p>梱包のstyle.cssで行います。メモ帳で編集できます。詳しい説明も書いていますのでお読み下さい。</p>
+
+<h2>テンプレートの使い方</h2>
+
+<p><strong class="color1">■titleタグの設定はとても重要です。念入りにワードを選んで適切に入力しましょう。</strong><br />
+まず、htmlソースが見れる状態(メモ帳などで開いてもOK)にして、<br />
+<span class="look">&lt;title&gt;ブリーダー向けホームページテンプレート s1_breeder1&lt;/title&gt;</span><br />
+を編集しましょう。</p>
+
+<p>続いて、下の方の<br />
+<span class="look">Copyright&copy; 2011 サンプルブリーダーショップ[…省略…]</span><br />
+も編集します。</p>
+
+<p><strong class="color1">■h1タグを変更しましょう。</strong><br /> 
+HP最上段にあるh1タグのテキストを変更しましょう。titleタグの次に重要なワードです。</p>
+
+<p><strong class="color1">■metaタグを変更しましょう。</strong><br />
+htmlソースが見える状態にしてmetaタグを変更しましょう。今はあまり重要視されていませんがSEO対策の一環です。</p>
+
+<p>ソースの上の方に、<br />
+<span class="look">content=&quot;ここにサイト説明を入れます&quot;</span><br />
+という部分がありますので、テキストをサイトの説明文に入れ替えます。検索結果の文面に使われる場合もありますので、見た人がよく分かるような説明文を簡潔に書きましょう。</p>
+
+<p>続いて、その下の行の<br />
+<span class="look">content=&quot;キーワード１,キーワード２,～～～&quot;</span><br />
+も設定します。ここはサイトに関係のあるキーワードを入れる箇所です。10個前後ぐらいあれば充分です。キーワード間はカンマ「,」で区切ります。</p>
+
+<h2>ヘッダーのメイン画像について</h2>
+<p> baseフォルダに入っているmainimg.jpgに文字や写真をのせ、imagesフォルダに上書きします。</p>
+
+<h2>上部のメインメニューについて</h2>
+<p> 文字なしのベース画像がbaseフォルダに入っていますので好きに文字いれしてそのままimagesフォルダへ上書きして下さい。左からmenu_01.gif…と置き換わります。また、menu_overで始まる画像がロールオーバー用画像になります。</p>
+
+<h2>当ブロックについて</h2>
+<p><span class="color1">■<strong>当ブロックの見出しについて</strong></span><br />
+当ブロックの一番上にある「ホームページビルダーをご利用の方へ（重要）」などの見出しは以下のように囲めばOKです。<br />
+<input name="textfield3" type="text" style="width: 90%" value="&lt;h2&gt;ホームページビルダーをご利用の方へ（重要）&lt;/h2&gt;" />
+</p>
+
+<p><span class="color1">■<strong>当ブロック内のテキストは…</strong></span><br />
+段落タグ&lt;p&gt;で囲みましょう。余白が自動で反映されます。</p>
+
+<p><span class="color1">■<strong>当ブロック内に画像を置く場合…</strong></span><br />
+段落タグ&lt;p&gt;内なら、幅796pxまで。段落タグの外なら幅856pxまで。</p>
+<h2>gif画像がうまく編集できない場合</h2>
+<p>メニューなどの土台画像はgif形式になっています。そのまま画像ソフトで文字のせすしようとると、色数が限定されてしまうので、まずは増色設定をしてから文字をのせてみましょう。増色設定用のメニューは画像ソフトにより異なるので、分からない場合は画像ソフトのサポートに問い合わせてみましょう。</p>
+
+<h2>トップページの「更新情報・お知らせ」コーナーの使い方</h2>
+<p>h2の見出しを含めた１ブロックをhtmlで書くと以下の通りです。<br />
+<textarea name="textarea" rows="8" style="width: 90%">
+&lt;h2&gt;更新情報・お知らせ&lt;/h2&gt;
+
+&lt;div class=&quot;new&quot;&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&quot;company.html&quot;&gt;当テンプレートの詳しい使い方はこちらをご覧下さい。&lt;/a&gt;&lt;img src=&quot;images/icon_new.gif&quot; alt=&quot;NEW&quot; width=&quot;30&quot; height=&quot;11&quot; /&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;img src=&quot;images/icon_up.gif&quot; alt=&quot;UP&quot; width=&quot;30&quot; height=&quot;11&quot; /&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+&lt;dt&gt;2011/00/00&lt;/dt&gt;
+&lt;dd&gt;ホームページリニューアル&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+</textarea>
+</p>
+
+<h2>プレビューでチェックすると警告メッセージが出る場合</h2>
+<p>メニューのロールオーバー効果のjavascript（jsファイル）ファイルによって出る警告ですが、WEB上では出ません。また、この警告が出ている間はメニューのロールオーバー効果も見る事ができないので、警告メッセージ内で左クリックし、「ブロックされているコンテンツを許可」を選択して下さい。これにより効果がちゃんと見れるようになります。</p>
+
+<h2>テンプレートの編集サービスについて</h2>
+<p>ロゴやメニューの画像加工やhtmlコーディング、テンプレートのテーマカラー変更やプログラム設置など、テンプレートに関する様々なサポートも承っております。また、当テンプレートのPSD(Photoshop)ファイル販売も行っております。<br />
+<a href="http://nikukyu-punch.com/support.html" target="_blank">詳しくはこちらのテンプレート編集ページをご覧下さい。</a></p>
+
+</div>
+<!--/main-->
+
+
+<div id="footer">
+Copyright&copy; 2011 サンプルブリーダーショップ All Rights Reserved.<br />
+<a href="http://nikukyu-punch.com/" target="_blank">Template design by Nikukyu-Punch</a>
+</div>
+<!--/footer-->
+
+
+</div>
+<!--/container-->
+
+
+</body>
+</html>

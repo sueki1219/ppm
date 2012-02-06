@@ -1,0 +1,342 @@
+@charset "shift_jis";
+
+
+
+body {
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+	font-size: 75%;
+	line-height: 2;
+	color: #333333;
+	background-color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background-image: url(images/bg.jpg);
+}
+
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul{
+	list-style-type: none;
+}
+
+img {
+	border: none;
+}
+
+input,textarea,select {
+	font-size: 1em;
+}
+
+form {
+	margin: 0px;
+}
+
+table {
+	border-collapse:collapse;
+	font-size: 100%;
+	border-spacing: 0;
+}
+
+
+
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: #518af3;			/*カーソルオーバー時の文字色*/
+	text-decoration: none;	/*カーソルオーバー時に下線を消す設定*/
+}
+
+
+
+/*ヘッダー（ロゴなどが入っているHP上部ブロック）
+---------------------------------------------------------------------------*/
+#header {
+	background-image: url(images/header_bg.jpg);	/*HP上段に幅一杯に広がる背景*/
+	height: 180px;	/*高さ*/
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/*コンテナー幅に合わせたヘッダーの中のコンテンツ*/
+#header div {
+	width: 930px;	/*幅*/
+	height: 180px;	/*高さ*/
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+
+/*h1タグ設定*/
+#header h1 {
+	font-size: 11px;	/*文字サイズ*/
+	color: #FFFFFF;		/*文字色*/
+	line-height: 20px;
+	position: absolute;
+	left: 34px;	/*ヘッダー中ブロックに対して左から34pxの位置に配置*/
+	top: 50px;	/*ヘッダー中ブロックに対して上から50pxの位置に配置*/
+}
+
+
+
+
+/*コンテナー（HPを囲むブロック）
+---------------------------------------------------------------------------*/
+#container {
+	width: 930px;
+	text-align: left;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #362e2b;	/*背景色*/
+	color: #FFFFFF;				/*文字色*/
+}
+
+
+
+/*メインメニュー設定
+---------------------------------------------------------------------------*/
+ul#menu li {
+	float: left;
+}
+
+ul#menu img {
+	vertical-align: bottom;
+}
+
+
+
+/*メインコンテンツ
+---------------------------------------------------------------------------*/
+#main {
+	clear: left;
+	width: 856px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 30px;
+}
+
+/*h2タグ設定*/
+#main h2 {
+	color: #FFFFFF;			/*文字色*/
+	font-size: 120%;		/*文字サイズ*/
+	letter-spacing: 0.2em;	/*文字間隔*/
+	background-image: url(images/title_bg1.jpg);	/*背景画像*/
+	background-repeat: no-repeat;					/*背景画像をリピートしない*/
+	background-position: bottom;					/*背景画像の下部を表示させる*/
+	padding: 0.6em 10px 2em;
+}
+
+/*段落タグの余白設定*/
+#main p {
+	padding: 0.5em 30px 1em;
+}
+
+
+
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+#main .new {
+	overflow: auto;
+	height: 145px;			/*ボックスの高さ*/
+	width: 796px;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+#main .new dl {
+	clear: left;
+	width: 776px;
+	overflow: hidden;
+}
+
+#main .new dt {
+	font-weight: bold;	/*日付を太字に*/
+	float: left;
+	width: 100px;
+}
+
+#main .new dd {
+	float: left;
+	width: 676px;
+}
+
+#main .new dd img {
+	vertical-align: middle;
+}
+
+/*IE6用*/
+*html #main .new dd img {
+	margin-top:0.5em;
+	vertical-align: baseline;
+}
+
+
+
+/*フッター
+---------------------------------------------------------------------------*/
+#footer {
+	text-align: center;	/*中のテキストをセンタリング*/
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #518af3;	/*背景色*/
+	color: #FFFFFF;	/*文字色*/
+}
+
+/*フッター内にリンク設定した場合用*/
+#footer a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+
+/*テーブル１
+---------------------------------------------------------------------------*/
+.ta1 {
+	width: 856px;	/*テーブルの幅*/
+	border: 3px solid #2B5EDB;	/*外枠の幅と線種と色*/
+	line-height: 2;
+	color: #362E2B;	/*文字色*/
+}
+
+.ta1 td, .ta1 th{
+	border: 1px solid #2B5EDB;	/*内枠の幅と線種と色*/
+	padding: 10px;	/*テーブル内の余白*/
+}
+
+/*テーブル内の右側*/
+.ta1 td{
+	width: 609px;				/*幅*/
+	background-color: #FFFFFF;	/*背景色*/
+}
+
+/*テーブル内の左側の見出し部分*/
+.ta1 th{
+	width: 200px;				/*幅*/
+	text-align: center;			/*文字をセンタリング*/
+	background-color: #D8EAFF;	/*背景色*/
+}
+
+/*テーブル１行目に入った見出し部分*/
+.ta1 th.tamidashi{
+	width: auto;
+	text-align: left;
+	background-color: #5690F4;	/*背景色*/
+	color: #FFFFFF;				/*文字色*/
+}
+
+/*リンク設定した場合の文字色*/
+.ta1 td a, .ta1 th a{
+	color: #362E2B;
+}
+
+/*テーブル内の左側の見出し部分にリンク設定した場合の文字色*/
+.ta1 th.tamidashi a{
+	color: #FFFFFF;
+}
+
+
+
+/*テーブル２
+---------------------------------------------------------------------------*/
+.ta2 {
+	width: 856px;	/*テーブルの幅*/
+	line-height: 2;
+}
+
+.ta2,.ta2 td, .ta2 th{
+	border: 3px solid #2b5edb;	/*線の幅と線種と色*/
+}
+
+.ta2 td,.ta2 th{
+	padding: 10px;	/*テーブル内の余白*/
+	width: 25%;				/*幅*/
+	text-align: center;			/*文字をセンタリング*/
+	background-color: #d8eaff;	/*背景色*/
+}
+.ta2 td{
+	color: #362E2B;	/*文字色*/
+}
+
+/*リンク設定した場合の文字色*/
+.ta2 td a{
+	color: #362E2B;
+}
+
+/*テーブル１行目に入った見出し部分*/
+.ta2 th{
+	background-color: #5690f4;	/*背景色*/
+}
+
+
+
+/*テーブル３（puppy2.htmlで使用しているテーブル）
+---------------------------------------------------------------------------*/
+.ta3 {
+	width: 856px;	/*テーブルの幅*/
+	line-height: 2;
+}
+
+.ta3 td,.ta3 th{
+	padding: 10px;	/*テーブル内の余白*/
+}
+
+/*テーブルの左側セル（パピーブロック）*/
+.ta3 th {
+	background-image: url(images/photo_bg.gif);	/*写真画像土台背景*/
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 360px;
+	width: 370px;
+	text-align: center;
+	vertical-align: top;
+	padding-top: 20px;
+	color: #362E2B;	/*文字色*/
+}
+
+/*テーブルの左側セルにリンク設定した場合の文字色*/
+.ta3 th a {
+	color: #362e2b;
+}
+
+/*テーブルの右側セル*/
+.ta3 td {
+	background-image: url(images/line1.gif);	/*テキスト下のドットライン*/
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	padding-bottom: 11px;
+}
+
+
+
+/*その他
+---------------------------------------------------------------------------*/
+.look {
+	background-color: #261D01;
+	color: #FFFFFF;
+}
+
+.mb1em {
+	margin-bottom: 1em;
+}
+
+.clear {
+	clear: both;
+}
+
+ul.disc {
+	padding: 0.5em 10px 0.5em 25px;
+	list-style: disc;
+}
+
+.color1 {
+	color: #FF0000;
+}
