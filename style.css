@@ -3,7 +3,7 @@
 
 
 body {
-	font-family: "ƒƒCƒŠƒI", Meiryo, "‚l‚r ‚oƒSƒVƒbƒN", Osaka, "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro";
+	font-family: "ãƒ¡ã‚¤ãƒªã‚ª", Meiryo, "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", Osaka, "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W3", "Hiragino Kaku Gothic Pro";
 	font-size: 75%;
 	line-height: 2;
 	color: #333333;
@@ -43,65 +43,62 @@ table {
 
 
 
-/*ƒŠƒ“ƒNi‘S”Êjİ’è
+/*ãƒªãƒ³ã‚¯ï¼ˆå…¨èˆ¬ï¼‰è¨­å®š
 ---------------------------------------------------------------------------*/
 a {
 	color: #FFFFFF;
 }
 
 a:hover {
-	color: #518af3;			/*ƒJ[ƒ\ƒ‹ƒI[ƒo[‚Ì•¶šF*/
-	text-decoration: none;	/*ƒJ[ƒ\ƒ‹ƒI[ƒo[‚É‰ºü‚ğÁ‚·İ’è*/
+	color: #518af3;			/*ã‚«ãƒ¼ã‚½ãƒ«ã‚ªãƒ¼ãƒãƒ¼æ™‚ã®æ–‡å­—è‰²*/
+	text-decoration: none;	/*ã‚«ãƒ¼ã‚½ãƒ«ã‚ªãƒ¼ãƒãƒ¼æ™‚ã«ä¸‹ç·šã‚’æ¶ˆã™è¨­å®š*/
 }
 
 
 
-/*ƒwƒbƒ_[iƒƒS‚È‚Ç‚ª“ü‚Á‚Ä‚¢‚éHPã•”ƒuƒƒbƒNj
+/*ãƒ˜ãƒƒãƒ€ãƒ¼ï¼ˆãƒ­ã‚´ãªã©ãŒå…¥ã£ã¦ã„ã‚‹HPä¸Šéƒ¨ãƒ–ãƒ­ãƒƒã‚¯ï¼‰
 ---------------------------------------------------------------------------*/
 #header {
-	background-image: url(images/header_bg.jpg);	/*HPã’i‚É•ˆê”t‚ÉL‚ª‚é”wŒi*/
-	height: 180px;	/*‚‚³*/
+	background-image: url(images/header_bg.jpg);	/*HPä¸Šæ®µã«å¹…ä¸€æ¯ã«åºƒãŒã‚‹èƒŒæ™¯*/
+	height: 180px;	/*é«˜ã•*/
 	width: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-/*ƒRƒ“ƒeƒi[•‚É‡‚í‚¹‚½ƒwƒbƒ_[‚Ì’†‚ÌƒRƒ“ƒeƒ“ƒc*/
 #header div {
-	width: 930px;	/*•*/
-	height: 180px;	/*‚‚³*/
+	width: 930px;	/*å¹…*/
+	height: 180px;
 	margin-right: auto;
 	margin-left: auto;
 	position: relative;
 }
 
-/*h1ƒ^ƒOİ’è*/
+/*h1ã‚¿ã‚°è¨­å®š*/
 #header h1 {
-	font-size: 11px;	/*•¶šƒTƒCƒY*/
-	color: #FFFFFF;		/*•¶šF*/
+	font-size: 11px;	/*æ–‡å­—ã‚µã‚¤ã‚º*/
+	color: #FFFFFF;		/*æ–‡å­—è‰²*/
 	line-height: 20px;
 	position: absolute;
-	left: 34px;	/*ƒwƒbƒ_[’†ƒuƒƒbƒN‚É‘Î‚µ‚Ä¶‚©‚ç34px‚ÌˆÊ’u‚É”z’u*/
-	top: 50px;	/*ƒwƒbƒ_[’†ƒuƒƒbƒN‚É‘Î‚µ‚Äã‚©‚ç50px‚ÌˆÊ’u‚É”z’u*/
+	left: 34px;
+	top: 50px;
 }
 
 
 
 
-/*ƒRƒ“ƒeƒi[iHP‚ğˆÍ‚ŞƒuƒƒbƒNj
----------------------------------------------------------------------------*/
 #container {
 	width: 930px;
 	text-align: left;
 	margin-right: auto;
 	margin-left: auto;
-	background-color: #362e2b;	/*”wŒiF*/
-	color: #FFFFFF;				/*•¶šF*/
+	background-color: #362e2b;
+	color: #FFFFFF;
 }
 
 
 
-/*ƒƒCƒ“ƒƒjƒ…[İ’è
+/*ãƒ¡ã‚¤ãƒ³ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¨­å®š
 ---------------------------------------------------------------------------*/
 ul#menu li {
 	float: left;
@@ -113,7 +110,7 @@ ul#menu img {
 
 
 
-/*ƒƒCƒ“ƒRƒ“ƒeƒ“ƒc
+/*ãƒ¡ã‚¤ãƒ³ã‚³ãƒ³ãƒ†ãƒ³ãƒ„
 ---------------------------------------------------------------------------*/
 #main {
 	clear: left;
@@ -123,29 +120,29 @@ ul#menu img {
 	padding: 30px;
 }
 
-/*h2ƒ^ƒOİ’è*/
+/*h2ã‚¿ã‚°è¨­å®š*/
 #main h2 {
-	color: #FFFFFF;			/*•¶šF*/
-	font-size: 120%;		/*•¶šƒTƒCƒY*/
-	letter-spacing: 0.2em;	/*•¶šŠÔŠu*/
-	background-image: url(images/title_bg1.jpg);	/*”wŒi‰æ‘œ*/
-	background-repeat: no-repeat;					/*”wŒi‰æ‘œ‚ğƒŠƒs[ƒg‚µ‚È‚¢*/
-	background-position: bottom;					/*”wŒi‰æ‘œ‚Ì‰º•”‚ğ•\¦‚³‚¹‚é*/
+	color: #FFFFFF;			/*æ–‡å­—è‰²*/
+	font-size: 120%;		/*æ–‡å­—ã‚µã‚¤ã‚º*/
+	letter-spacing: 0.2em;	/*æ–‡å­—é–“éš”*/
+	background-image: url(images/title_bg1.jpg);	/*èƒŒæ™¯ç”»åƒ*/
+	background-repeat: no-repeat;					/*èƒŒæ™¯ç”»åƒã‚’ãƒªãƒ”ãƒ¼ãƒˆã—ãªã„*/
+	background-position: bottom;					/*èƒŒæ™¯ç”»åƒã®ä¸‹éƒ¨ã‚’è¡¨ç¤ºã•ã›ã‚‹*/
 	padding: 0.6em 10px 2em;
 }
 
-/*’i—ƒ^ƒO‚Ì—]”’İ’è*/
+/*æ®µè½ã‚¿ã‚°ã®ä½™ç™½è¨­å®š*/
 #main p {
 	padding: 0.5em 30px 1em;
 }
 
 
 
-/*ƒgƒbƒvƒy[ƒW“àuXVî•ñE‚¨’m‚ç‚¹vƒuƒƒbƒN
+/*ãƒˆãƒƒãƒ—ãƒšãƒ¼ã‚¸å†…ã€Œæ›´æ–°æƒ…å ±ãƒ»ãŠçŸ¥ã‚‰ã›ã€ãƒ–ãƒ­ãƒƒã‚¯
 ---------------------------------------------------------------------------*/
 #main .new {
 	overflow: auto;
-	height: 145px;			/*ƒ{ƒbƒNƒX‚Ì‚‚³*/
+	height: 145px;			/*ãƒœãƒƒã‚¯ã‚¹ã®é«˜ã•*/
 	width: 796px;
 	padding-right: 30px;
 	padding-left: 30px;
@@ -158,7 +155,7 @@ ul#menu img {
 }
 
 #main .new dt {
-	font-weight: bold;	/*“ú•t‚ğ‘¾š‚É*/
+	font-weight: bold;	/*æ—¥ä»˜ã‚’å¤ªå­—ã«*/
 	float: left;
 	width: 100px;
 }
@@ -172,7 +169,7 @@ ul#menu img {
 	vertical-align: middle;
 }
 
-/*IE6—p*/
+/*IE6ç”¨*/
 *html #main .new dd img {
 	margin-top:0.5em;
 	vertical-align: baseline;
@@ -180,118 +177,68 @@ ul#menu img {
 
 
 
-/*ƒtƒbƒ^[
+/*ãƒ•ãƒƒã‚¿ãƒ¼
 ---------------------------------------------------------------------------*/
 #footer {
-	text-align: center;	/*’†‚ÌƒeƒLƒXƒg‚ğƒZƒ“ƒ^ƒŠƒ“ƒO*/
+	text-align: center;	/*ä¸­ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’ã‚»ãƒ³ã‚¿ãƒªãƒ³ã‚°*/
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: #518af3;	/*”wŒiF*/
-	color: #FFFFFF;	/*•¶šF*/
+	background-color: #518af3;
+	color: #FFFFFF;
 }
 
-/*ƒtƒbƒ^[“à‚ÉƒŠƒ“ƒNİ’è‚µ‚½ê‡—p*/
 #footer a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
 
-
-
-/*ƒe[ƒuƒ‹‚P
----------------------------------------------------------------------------*/
-.ta1 {
-	width: 856px;	/*ƒe[ƒuƒ‹‚Ì•*/
-	border: 3px solid #2B5EDB;	/*ŠO˜g‚Ì•‚Æüí‚ÆF*/
-	line-height: 2;
-	color: #362E2B;	/*•¶šF*/
-}
-
-.ta1 td, .ta1 th{
-	border: 1px solid #2B5EDB;	/*“à˜g‚Ì•‚Æüí‚ÆF*/
-	padding: 10px;	/*ƒe[ƒuƒ‹“à‚Ì—]”’*/
-}
-
-/*ƒe[ƒuƒ‹“à‚Ì‰E‘¤*/
-.ta1 td{
-	width: 609px;				/*•*/
-	background-color: #FFFFFF;	/*”wŒiF*/
-}
-
-/*ƒe[ƒuƒ‹“à‚Ì¶‘¤‚ÌŒ©o‚µ•”•ª*/
-.ta1 th{
-	width: 200px;				/*•*/
-	text-align: center;			/*•¶š‚ğƒZƒ“ƒ^ƒŠƒ“ƒO*/
-	background-color: #D8EAFF;	/*”wŒiF*/
-}
-
-/*ƒe[ƒuƒ‹‚Ps–Ú‚É“ü‚Á‚½Œ©o‚µ•”•ª*/
-.ta1 th.tamidashi{
-	width: auto;
-	text-align: left;
-	background-color: #5690F4;	/*”wŒiF*/
-	color: #FFFFFF;				/*•¶šF*/
-}
-
-/*ƒŠƒ“ƒNİ’è‚µ‚½ê‡‚Ì•¶šF*/
-.ta1 td a, .ta1 th a{
-	color: #362E2B;
-}
-
-/*ƒe[ƒuƒ‹“à‚Ì¶‘¤‚ÌŒ©o‚µ•”•ª‚ÉƒŠƒ“ƒNİ’è‚µ‚½ê‡‚Ì•¶šF*/
-.ta1 th.tamidashi a{
-	color: #FFFFFF;
-}
-
-
-
-/*ƒe[ƒuƒ‹‚Q
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ï¼’
 ---------------------------------------------------------------------------*/
 .ta2 {
-	width: 856px;	/*ƒe[ƒuƒ‹‚Ì•*/
+	width: 856px;	/*ãƒ†ãƒ¼ãƒ–ãƒ«ã®å¹…*/
 	line-height: 2;
 }
 
 .ta2,.ta2 td, .ta2 th{
-	border: 3px solid #2b5edb;	/*ü‚Ì•‚Æüí‚ÆF*/
+	border: 3px solid #2b5edb;	/*ç·šã®å¹…ã¨ç·šç¨®ã¨è‰²*/
 }
 
 .ta2 td,.ta2 th{
-	padding: 10px;	/*ƒe[ƒuƒ‹“à‚Ì—]”’*/
-	width: 25%;				/*•*/
-	text-align: center;			/*•¶š‚ğƒZƒ“ƒ^ƒŠƒ“ƒO*/
-	background-color: #d8eaff;	/*”wŒiF*/
+	padding: 10px;	/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®ä½™ç™½*/
+	width: 25%;				/*å¹…*/
+	text-align: center;			/*æ–‡å­—ã‚’ã‚»ãƒ³ã‚¿ãƒªãƒ³ã‚°*/
+	background-color: #d8eaff;	/*èƒŒæ™¯è‰²*/
 }
 .ta2 td{
-	color: #362E2B;	/*•¶šF*/
+	color: #362E2B;	/*æ–‡å­—è‰²*/
 }
 
-/*ƒŠƒ“ƒNİ’è‚µ‚½ê‡‚Ì•¶šF*/
+/*ãƒªãƒ³ã‚¯è¨­å®šã—ãŸå ´åˆã®æ–‡å­—è‰²*/
 .ta2 td a{
 	color: #362E2B;
 }
 
-/*ƒe[ƒuƒ‹‚Ps–Ú‚É“ü‚Á‚½Œ©o‚µ•”•ª*/
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ï¼‘è¡Œç›®ã«å…¥ã£ãŸè¦‹å‡ºã—éƒ¨åˆ†*/
 .ta2 th{
-	background-color: #5690f4;	/*”wŒiF*/
+	background-color: #5690f4;	/*èƒŒæ™¯è‰²*/
 }
 
 
 
-/*ƒe[ƒuƒ‹‚Ripuppy2.html‚Åg—p‚µ‚Ä‚¢‚éƒe[ƒuƒ‹j
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ï¼“ï¼ˆpuppy2.htmlã§ä½¿ç”¨ã—ã¦ã„ã‚‹ãƒ†ãƒ¼ãƒ–ãƒ«ï¼‰
 ---------------------------------------------------------------------------*/
 .ta3 {
-	width: 856px;	/*ƒe[ƒuƒ‹‚Ì•*/
+	width: 856px;	/*ãƒ†ãƒ¼ãƒ–ãƒ«ã®å¹…*/
 	line-height: 2;
 }
 
 .ta3 td,.ta3 th{
-	padding: 10px;	/*ƒe[ƒuƒ‹“à‚Ì—]”’*/
+	padding: 10px;	/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®ä½™ç™½*/
 }
 
-/*ƒe[ƒuƒ‹‚Ì¶‘¤ƒZƒ‹iƒpƒs[ƒuƒƒbƒNj*/
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ã®å·¦å´ã‚»ãƒ«ï¼ˆãƒ‘ãƒ”ãƒ¼ãƒ–ãƒ­ãƒƒã‚¯ï¼‰*/
 .ta3 th {
-	background-image: url(images/photo_bg.gif);	/*Ê^‰æ‘œ“y‘ä”wŒi*/
+	background-image: url(images/photo_bg.gif);	/*å†™çœŸç”»åƒåœŸå°èƒŒæ™¯*/
 	background-repeat: no-repeat;
 	background-position: center top;
 	height: 360px;
@@ -299,26 +246,114 @@ ul#menu img {
 	text-align: center;
 	vertical-align: top;
 	padding-top: 20px;
-	color: #362E2B;	/*•¶šF*/
+	color: #362E2B;
 }
 
-/*ƒe[ƒuƒ‹‚Ì¶‘¤ƒZƒ‹‚ÉƒŠƒ“ƒNİ’è‚µ‚½ê‡‚Ì•¶šF*/
+
 .ta3 th a {
 	color: #362e2b;
 }
 
-/*ƒe[ƒuƒ‹‚Ì‰E‘¤ƒZƒ‹*/
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ã®å³å´ã‚»ãƒ«*/
 .ta3 td {
-	background-image: url(images/line1.gif);	/*ƒeƒLƒXƒg‰º‚Ìƒhƒbƒgƒ‰ƒCƒ“*/
+	background-image: url(images/line1.gif);	/*ãƒ†ã‚­ã‚¹ãƒˆä¸‹ã®ãƒ‰ãƒƒãƒˆãƒ©ã‚¤ãƒ³*/
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	padding-bottom: 11px;
 }
 
 
+.item_list {
+	width: 856px;	
+	border: 3px solid #2B5EDB;	
+	line-height: 2;
+	color: #362E2B;
+}
 
-/*‚»‚Ì‘¼
----------------------------------------------------------------------------*/
+.item_list td, .item_list th{
+	border: 1px solid #2B5EDB;
+	padding: 10px;
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®å³å´*/
+.item_list td{
+	width: 609px;				/*å¹…*/
+	background-color: #FFFFFF;	/*èƒŒæ™¯è‰²*/
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®å·¦å´ã®è¦‹å‡ºã—éƒ¨åˆ†*/
+.item_list th{
+	width: 200px;				/*å¹…*/
+	text-align: center;			/*æ–‡å­—ã‚’ã‚»ãƒ³ã‚¿ãƒªãƒ³ã‚°*/
+	background-color: #D8EAFF;	/*èƒŒæ™¯è‰²*/
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ï¼‘è¡Œç›®ã«å…¥ã£ãŸè¦‹å‡ºã—éƒ¨åˆ†*/
+.item_list th.tamidashi{
+	width: auto;
+	background-color: #5690F4;	/*èƒŒæ™¯è‰²*/
+	color: #FFFFFF;				/*æ–‡å­—è‰²*/
+}
+
+/*ãƒªãƒ³ã‚¯è¨­å®šã—ãŸå ´åˆã®æ–‡å­—è‰²*/
+.item_list td a, .item_list th a{
+	color: #362E2B;
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®å·¦å´ã®è¦‹å‡ºã—éƒ¨åˆ†ã«ãƒªãƒ³ã‚¯è¨­å®šã—ãŸå ´åˆã®æ–‡å­—è‰²*/
+.item_list th.tamidashi a{
+	color: #FFFFFF;
+}
+
+
+
+
+.report_list {
+	width: auto;	
+	border: 3px solid #2B5EDB;	
+	line-height: 2;
+	color: #362E2B;
+	margin: 0 auto;
+}
+
+.report_list td, .report_list th{
+	border: 1px solid #2B5EDB;
+	padding: 10px;
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®å³å´*/
+.report_list td{
+	width: 609px;				/*å¹…*/
+	background-color: #FFFFFF;	/*èƒŒæ™¯è‰²*/
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®å·¦å´ã®è¦‹å‡ºã—éƒ¨åˆ†*/
+.report_list th{
+	width: 200px;				/*å¹…*/
+	text-align: center;			/*æ–‡å­—ã‚’ã‚»ãƒ³ã‚¿ãƒªãƒ³ã‚°*/
+	background-color: #D8EAFF;	/*èƒŒæ™¯è‰²*/
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«ï¼‘è¡Œç›®ã«å…¥ã£ãŸè¦‹å‡ºã—éƒ¨åˆ†*/
+.report_list th.tamidashi{
+	width: auto;
+	background-color: #5690F4;	/*èƒŒæ™¯è‰²*/
+	color: #FFFFFF;				/*æ–‡å­—è‰²*/
+}
+
+/*ãƒªãƒ³ã‚¯è¨­å®šã—ãŸå ´åˆã®æ–‡å­—è‰²*/
+.report_list td a, .item_list th a{
+	color: #FF0000;
+}
+
+/*ãƒ†ãƒ¼ãƒ–ãƒ«å†…ã®å·¦å´ã®è¦‹å‡ºã—éƒ¨åˆ†ã«ãƒªãƒ³ã‚¯è¨­å®šã—ãŸå ´åˆã®æ–‡å­—è‰²*/
+.report_list th.tamidashi a{
+	color: #FFFFFF;
+}
+
+
+
+
 .look {
 	background-color: #261D01;
 	color: #FFFFFF;
@@ -339,4 +374,19 @@ ul.disc {
 
 .color1 {
 	color: #FF0000;
+}
+
+.progress
+{
+	text-align:right;
+}
+
+.report_type
+{
+	float: right;
+}
+
+.save
+{
+	float: right;	
 }

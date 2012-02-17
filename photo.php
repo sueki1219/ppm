@@ -1,3 +1,8 @@
+<?php
+    //DB接続
+    require("lib/dbconect.php");
+    $dbcn = DbConnect();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
@@ -11,11 +16,7 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="script.js"></script>
 </head>
-
-
 <body>
-
-
 <div id="header">
 <div>
 <img src="images/pcpmain.png" width="930" height="180" />
@@ -38,11 +39,47 @@
 
 <div id="main">
 
-<h2>CONTACT</h2>
-
-<p>お問い合わせフォーム制作も承っております。一式2,500円〜。<br />
-詳しくはご相談下さい。</p>
-
+<h2>マスタ管理</h2>
+<table id="item_list" class="item_list" >
+	<tr>
+		<th class="tamidashi">ユーザID</th>
+		<th class="tamidashi">ユーザ名</th>
+		<th class="tamidashi">チーム名</th>
+		<th class="tamidashi">学年</th>
+		<th class="tamidashi">電話番号</th>
+		<th class="tamidashi">メールアドレス</th>
+	</tr>
+	<?php
+		$sql = "SELECT 
+				user_id,
+				name,
+				m_team.team_name,
+				class,
+				mailaddress,
+				tel 
+				FROM m_user 
+				JOIN m_team ON m_team.team_seq = m_user.team_seq;"; 
+				
+		$result = mysql_query($sql);
+		while ($row = mysql_fetch_array($result))
+		{?>
+			<tr>
+				<td><?php echo $row['user_id'] ?></td>
+				<td><?php echo $row['name'] ?></td>
+				<td><?php echo $row['team_name'] ?></td>
+				<td><?php echo $row['class'] ?></td>
+				<td><?php echo $row['tel'] ?></td>
+				<td><?php echo $row['mailaddress'] ?></td>
+			</tr>		 
+	<?php
+		}
+		mysql_free_result($result);	
+		?>
+</table>
+<br>
+<form action="user_regist.php" method="post">
+	<input type="submit" value="新規登録" />
+</form>
 </div>
 <!--/main-->
 
