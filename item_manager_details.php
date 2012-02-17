@@ -2,6 +2,7 @@
     //DB接続
     require("lib/dbconect.php");
     $dbcn = DbConnect();
+	$parent_item_seq = $_GET['id'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -35,22 +36,18 @@
 <li><a href="photo.php"><img src="images/menu_04.gif" alt="PHOTO" name="Image4" width="184" height="50" id="Image4" onmouseover="MM_swapImage('Image4','','images/menu_over_04.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
 <li><a href="contact.php"><img src="images/menu_05.gif" alt="CONTACT" name="Image5" width="186" height="50" id="Image5" onmouseover="MM_swapImage('Image5','','images/menu_over_05.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
 </ul><div id="main">
-<h2>ユーザ登録</h2>
+<h2>子アイテム登録</h2>
 <?php
 if(isset($_POST['regist']))
 {?>
 <div id="regist">
 	<?php
-		$user_name = $_POST['user_name'];
-		$user_id = $_POST['user_id'];
-		$pass = $_POST['pass'];
-		$team = $_POST['team'];
-		$auth = $_POST['auth'];
-		$sex = $_POST['sex'];
-		$class = $_POST['class'];
-		$email = $_POST['mailaddress'];
-		$tel = $_POST['tel'];
-		$sql = "INSERT INTO m_user (user_id, pass, name, team_seq, auth_seq, sex, class, mailaddress, tel) VALUES ('$user_id', '$pass', '$user_name', $team, $auth, $sex, $class, '$email','$tel');";
+		$item_name = $_POST['item_name'];
+		$parent_seq = $_POST['parent_seq'];
+		$schedule_start_date = $_POST['schedule_start_date'];
+		$schedule_end_date = $_POST['schedule_end_date'];
+		$sql = "INSERT INTO child_item (parent_item_seq, child_item_name, schedule_start_date, schedule_end_date) VALUES ('$parent_seq','$item_name', '$schedule_start_date', '$schedule_end_date');
+";
 		mysql_query($sql);
 	?>
 	登録しました。
@@ -58,43 +55,19 @@ if(isset($_POST['regist']))
 <?php
 }
 else
-{?>
+{
+	$sql = "SELECT parent_item_name FROM parent_item WHERE parent_item_seq = '$parent_item_seq';";
+	$result = mysql_query($sql);
+	$row = mysql_fetch_array($result);
+	?>
 <div id="input">
 	<form action="" method="post">
-ユーザ名：<input type="text" name="user_name" /><br>
-ユーザID：<input type="text" name="user_id" /><br>
-パスワード：<input type="text" name="pass" /><br>
-チーム：<select name="team">
-	<?php
-	$sql = "SELECT * FROM m_team ORDER BY team_seq ASC;";
-	$result = mysql_query($sql);
-	while($row = mysql_fetch_array($result))
-	{ ?>
-		<option value="<?php echo $row[0] ?>"><?php echo $row[1] ?></option>	
-	<?php
-	}
-	  ?>
-</select><br>
-権限：<select name="auth">
-		<?php
-	$sql = "SELECT * FROM m_autho_type ORDER BY autho_type_seq ASC;";
-	$result = mysql_query($sql);
-	while($row = mysql_fetch_array($result))
-	{ ?>
-		<option value="<?php echo $row[0] ?>"><?php echo $row[1] ?></option>	
-	<?php
-	}
-	  ?>
-
-</select><br>
-性別：<select name="sex">
-	<option value="0">男</option>
-	<option value="1">女</option>
-</select><br>
-学年：<input type="text" name="class" /><br>
-メールアドレス：<input type="email" name="mailaddress" /><br>
-電話番号：<input type="tel" name="tel" /><br>
+親アイテム名：<input type="text" value="<?php echo $row[0] ?>" readonly /><br>	
+子アイテム名：<input type="text" name="item_name" /><br>
+予定開始日：<input type="date" name="schedule_start_date" /><br>
+予定終了日：<input type="date" name="schedule_end_date" /><br>
 <input type="hidden" name="regist" value="1" />
+<input type="hidden" name="parent_seq" value="<?php echo $parent_item_seq ?>" />
 <input class="save" type="submit" value="登録" />
 </form>
 </div>
