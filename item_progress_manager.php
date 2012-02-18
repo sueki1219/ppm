@@ -197,14 +197,15 @@ else if(isset($_GET['id']) AND isset($_GET['id2']))
 	<form action="" method="post">
 対象親アイテム名：<?php echo $row[0] ?><br>	
 対象子アイテム名：<?php echo $row[1] ?><br>	
-担当メンバー:<input type="text" name="progress" /><br>
+進捗度:<input type="text" name="progress" /><br>
 <input type="hidden" name="regist" value="1" />
 <input type="hidden" name="parent_seq" value="<?php echo $parent_item_seq ?>" />
 <input type="hidden" name="child_seq" value="<?php echo $child_item_seq ?>" />
 <input class="save" type="submit" value="登録" />
 </form>
 </div>
-	
+	<p><a href="javascript:history.back()"><img src="images/back.gif" alt="前のページにもどる" width="330" height="44" /></a></p>
+
 <?php
 }else if(isset($_GET['id']))
 { 	$sql = "SELECT parent_item_name FROM item_list WHERE parent_item_seq = '$parent_item_seq';";
@@ -221,6 +222,7 @@ else if(isset($_GET['id']) AND isset($_GET['id2']))
 </form>
 </div>
 
+<p><a href="javascript:history.back()"><img src="images/back.gif" alt="前のページにもどる" width="330" height="44" /></a></p>
 
 <?php
 }

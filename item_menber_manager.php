@@ -97,7 +97,7 @@ if($login_user_auth == '1')
 <br>
 <br>
 <div id="main">
-<h2>子アイテム登録</h2>
+<h2>担当メンバー追加</h2>
 <?php
 if(isset($_POST['regist']))
 {?>
@@ -164,7 +164,8 @@ else
 </table>
 
 </div>
-	
+	<p><a href="javascript:history.back()"><img src="images/back.gif" alt="前のページにもどる" width="330" height="44" /></a></p>
+
 <?php
 }
 ?>

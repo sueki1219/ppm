@@ -110,6 +110,8 @@ if($login_user_auth == '1')
 	<input class="save" type="submit" value="承認" />
 </form>
 </div>
+<p><a href="javascript:history.back()"><img src="images/back.gif" alt="前のページにもどる" width="330" height="44" /></a></p>
+
 <!--/main-->
 
 
