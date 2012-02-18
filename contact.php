@@ -2,7 +2,9 @@
     //DB接続
     require("lib/dbconect.php");
     $dbcn = DbConnect();
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -75,7 +77,7 @@
 				<td><?php echo $row[3] ?></td>
 				<td><a href="item_manager_details_list.php?id=<?php echo $row[0] ?>"><?php echo $row[1] ?></a></td>
 				<td><?php echo $row[2] ?></td>
-				<td class="progress"><?php echo $row[8] ?>%</td>
+				<td class="progress"><a href="item_progress_manager.php?id=<?php echo $row[0] ?>"><?php echo $row[8] ?>%</a></td>
 				<td><?php echo $row[4] ?></td>
 				<td><?php echo $row[5] ?></td>
 				<td><?php echo $row[6] ?></td>
