@@ -18,6 +18,15 @@ else
 			case 'auth':
 				$login_user_auth = $value;
 				break;
+			case 'team':
+				$login_user_team = $value;
+				break;
+			case 'auth_name':
+				$login_user_auth_name = $value;
+				break;
+			case 'team_name':
+				$login_user_team_name = $value;
+				break;
 		}
 	}
 }
@@ -86,9 +95,19 @@ if($login_user_auth == '1')
 <?php
 }
 ?>
-<p class="login_info">ログイン名：<?php echo $login_user_name ?></p>
-
-
+<table class="login_info">
+	<tr>
+		<th>チーム名:</th>
+		<td><?php echo $login_user_team_name ?></td>
+	</tr>
+	<tr>
+		<th>ユーザ名:</th>
+		<td><?php echo $login_user_name ?></td>
+	</tr>
+</table>
+<br>
+<br>
+<br>
 <div id="main">
 
 <h2>報告書記入</h2>

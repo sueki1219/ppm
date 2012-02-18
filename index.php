@@ -18,8 +18,18 @@ else
 			case 'auth':
 				$login_user_auth = $value;
 				break;
+			case 'team':
+				$login_user_team = $value;
+				break;
+			case 'auth_name':
+				$login_user_auth_name = $value;
+				break;
+			case 'team_name':
+				$login_user_team_name = $value;
+				break;
 		}
 	}
+
 }
 
 //DB接続
@@ -101,8 +111,19 @@ if($login_user_auth == '1')
 <?php
 }
 ?>
-<p class="login_info">ログイン名：<?php echo $login_user_name ?></p>
-
+<table class="login_info">
+	<tr>
+		<th>チーム名:</th>
+		<td><?php echo $login_user_team_name ?></td>
+	</tr>
+	<tr>
+		<th>ユーザ名:</th>
+		<td><?php echo $login_user_name ?></td>
+	</tr>
+</table>
+<br>
+<br>
+<br>
 <div id="main">
 <h2>更新情報・お知らせ</h2>
 
@@ -154,8 +175,7 @@ if($login_user_auth == '1')
 				{
 				?>	
 					<img src="images/icon_new.gif" alt="NEW" width="30" height="11" />	
-			<?php
-					
+			<?php	
 				}
 				//１週間以内ならUP
 				elseif(strtotime($row[3]) <= strtotime(date('Y-m-d')) AND strtotime($row[3]) >= strtotime($oldweek))
@@ -166,11 +186,9 @@ if($login_user_auth == '1')
 				?>
 				</dd>
 			</dl>			
-			
 	<?php
 		}
 	}
-
 ?>
 </div>
 <!--/new-->

@@ -18,9 +18,46 @@ else
 			case 'auth':
 				$login_user_auth = $value;
 				break;
+			case 'team':
+				$login_user_team = $value;
+				break;
+			case 'auth_name':
+				$login_user_auth_name = $value;
+				break;
+			case 'team_name':
+				$login_user_team_name = $value;
+				break;
 		}
 	}
 }
+
+function computeDate($year, $month, $day, $addDays,$type) 
+{
+    $baseSec = mktime(0, 0, 0, $month, $day, $year);//基準日を秒で取得
+    $addSec = $addDays * 86400;//日数×１日の秒数
+    $targetSec = $baseSec + $addSec;
+	if($type == '1')
+	{
+	    return date("Y年m月d日", $targetSec);	
+	}
+	else
+	{
+	    return date("Y-m-d", $targetSec);				
+	}
+}
+$date = getdate();
+$weeklist = array();
+$weeklisti = array();
+//日付リスト作成
+for($i=7;$i>-1;$i--)
+{
+	$weeklist[] = computeDate($date['year'],$date['mon'],$date['mday'],-$i,1);
+	$weeklisti[] = computeDate($date['year'],$date['mon'],$date['mday'],-$i,2);
+	$y++;
+}
+$fromdate = $weeklisti[0];
+$todate = $weeklisti[7];
+
 
     //DB接続
     require("lib/dbconect.php");
@@ -43,8 +80,6 @@ else
 
 
 <body>
-
-
 <div id="header">
 <div>
 <img src="images/pcpmain.png" width="930" height="180" />
@@ -75,9 +110,19 @@ if($login_user_auth == '1')
 <?php
 }
 ?>
-<p class="login_info">ログイン名：<?php echo $login_user_name ?></p>
-
-
+<table class="login_info">
+	<tr>
+		<th>チーム名:</th>
+		<td><?php echo $login_user_team_name ?></td>
+	</tr>
+	<tr>
+		<th>ユーザ名:</th>
+		<td><?php echo $login_user_name ?></td>
+	</tr>
+</table>
+<br>
+<br>
+<br>
 <div id="main">
 
 <h2>アイテム管理</h2>
@@ -124,8 +169,157 @@ if($login_user_auth == '1')
 		mysql_free_result($result);	
 		?>
 </table>
-
 <button><a href="item_manager.php">新規登録</a></button>
+<h2>日報管理</h2>
+<?php
+		//日報データ表示
+		//リーダー
+		if($login_user_auth == '2')
+		{
+		$sql = "SELECT 
+				m_user.name,
+				DATE_FORMAT(report_date,'%Y年%m月%d日'), 
+				report_seq,
+				approval_flg
+				FROM report 
+				JOIN m_report_type ON m_report_type.report_type_seq = report.report_type_seq 
+				JOIN m_approval_type ON m_approval_type.approval_type_seq = report.approval_flg 
+				JOIN m_user ON m_user.user_seq = report.user_seq
+				WHERE DATE_FORMAT(report_date,'%Y-%m-%d') BETWEEN '$fromdate' AND '$todate' 
+				AND report.report_type_seq = 1
+				AND report.approval_flg = 2
+				AND m_user.team_seq = $login_user_team
+				ORDER BY report_date";			
+		}
+		//マネージャー
+		else
+		{
+			$sql = "SELECT 
+				m_user.name,
+				DATE_FORMAT(report_date,'%Y年%m月%d日'), 
+				report_seq,
+				approval_flg
+				FROM report 
+				JOIN m_user ON m_user.user_seq = report.user_seq
+				WHERE DATE_FORMAT(report_date,'%Y-%m-%d') BETWEEN '$fromdate' AND '$todate' 
+				AND report_type_seq = 1
+				AND approval_flg = 3
+				ORDER BY report_date";
+		}
+		$result = mysql_query($sql);
+		$count = mysql_num_rows($result);
+		if($count == '0')
+		{	?>
+		<p>現在確認してない日報はありません。</p>	
+	<?php
+		}
+		else
+		{?>
+					
+			<table id="item_list" class="report_list" >
+				<tr>
+					<th class="tamidashi">ユーザ名</th>
+					<th class="tamidashi">日付</th>
+					<th class="tamidashi">承認</th>
+				</tr>
+			<?php
+			while($row = mysql_fetch_array($result))
+			{
+	?>
+				<tr>
+					<td><?php echo $row[0] ?></td>
+					<td><?php echo $row[1] ?></td>
+					<td><a href="report_manager.php?id=<?php echo $row[2] ?>">承認する</a></td>
+				</tr>		 
+	<?php
+			}	?>
+			</table>
+
+<?php
+		}	
+		mysql_free_result($result);
+		?>
+<h2>週報管理</h2>		
+<?php
+		//日報データ表示
+		//リーダー
+		if($login_user_auth == '2')
+		{
+		$sql = "SELECT 
+				m_user.name,
+				DATE_FORMAT(report_date,'%Y年%m月%d日'), 
+				report_seq,
+				approval_flg
+				FROM report 
+				JOIN m_report_type ON m_report_type.report_type_seq = report.report_type_seq 
+				JOIN m_approval_type ON m_approval_type.approval_type_seq = report.approval_flg 
+				JOIN m_user ON m_user.user_seq = report.user_seq
+				WHERE DATE_FORMAT(report_date,'%Y-%m-%d') BETWEEN '$fromdate' AND '$todate' 
+				AND report.report_type_seq = 2
+				AND report.approval_flg = 2
+				AND m_user.team_seq = $login_user_team
+				ORDER BY report_date";			
+		}
+		//マネージャー
+		else
+		{
+			$sql = "SELECT 
+				m_user.name,
+				DATE_FORMAT(report_date,'%Y年%m月%d日'), 
+				report_seq,
+				approval_flg
+				FROM report 
+				JOIN m_user ON m_user.user_seq = report.user_seq
+				WHERE DATE_FORMAT(report_date,'%Y-%m-%d') BETWEEN '$fromdate' AND '$todate' 
+				AND report_type_seq = 2
+				AND approval_flg = 3
+				ORDER BY report_date";
+		}
+		$result = mysql_query($sql);
+		$count = mysql_num_rows($result);
+		if($count == '0')
+		{	?>
+		<p>現在確認してない週報はありません。</p>	
+	<?php
+		}
+		else
+		{?>
+					
+			<table id="item_list" class="report_list" >
+				<tr>
+					<th class="tamidashi">ユーザ名</th>
+					<th class="tamidashi">日付</th>
+					<th class="tamidashi">承認</th>
+				</tr>
+			<?php
+			while($row = mysql_fetch_array($result))
+			{
+	?>
+				<tr>
+					<td><?php echo $row[0] ?></td>
+					<td><?php echo $row[1] ?></td>
+					<td><a href="report_manager.php?id=<?php echo $row[2] ?>">承認する</a></td>
+				</tr>		 
+	<?php
+			}	?>
+			</table>
+
+<?php
+		}	
+		mysql_free_result($result);
+
+if($login_user_auth == '3')
+{
+?>
+<h2>お知らせ管理</h2>
+<form action="news_regist.php" method="post">
+	内容：<input type="text" name="contants" size="120"/><br />
+	URL：<input type="url" name="url" />
+	<input type="submit" value="登録" />
+</form>	
+<?php
+}
+?>
 </div>
 <!--/main-->
 

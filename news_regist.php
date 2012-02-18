@@ -6,7 +6,7 @@ if(!isset($_COOKIE['login']))
 }
 else
 {
-		foreach ($_COOKIE['login'] as $key => $value) 
+	foreach ($_COOKIE['login'] as $key => $value) 
 	{
 		switch ($key) {
 			case 'user_seq':
@@ -29,14 +29,13 @@ else
 				break;
 		}
 	}
-
 }
     //DB接続
     require("lib/dbconect.php");
     $dbcn = DbConnect();
-	$parent_item_seq = $_GET['id'];
-	$chile_item_seq = $_GET['id2'];
-	$team_seq = $_GET['id3'];
+	
+	$contants = $_POST['contants'];
+	$url = $_POST['url'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -51,6 +50,8 @@ else
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="script.js"></script>
 </head>
+
+
 <body>
 <div id="header">
 <div>
@@ -61,7 +62,6 @@ else
 
 
 <div id="container">
-
 <?php 
 if($login_user_auth == '1')
 { ?>
@@ -97,78 +97,22 @@ if($login_user_auth == '1')
 <br>
 <br>
 <div id="main">
-<h2>子アイテム登録</h2>
+
+<h2>お知らせ登録</h2>
 <?php
-if(isset($_POST['regist']))
-{?>
-<div id="regist">
-	<?php
-		$childe_seq = $_POST['childe_seq'];
-		$parent_seq = $_POST['parent_seq'];
-		$user_seq = $_POST['user_seq'];
-		$sql = "INSERT INTO user_item VALUES ('$user_seq','$childe_seq', '$parent_seq');";
-		mysql_query($sql);
-	?>
-	登録しました。
-</div>	
-<?php
-}
-else
-{
-	$sql = "SELECT child_item_name FROM child_item WHERE child_item_seq = '$chile_item_seq';";
-	$result = mysql_query($sql);
-	$row = mysql_fetch_array($result);
-	?>
-<div id="input">
-	<form action="" method="post">
-対象アイテム名：<?php echo $row[0] ?><br>	
-担当メンバー:
-<select name="user_seq">
-		<?php
-	$sql = "SELECT * FROM m_user WHERE team_seq = '$team_seq' ORDER BY user_seq";
-	$result = mysql_query($sql);
-	while($row = mysql_fetch_array($result))
-	{ ?>
-		<option value="<?php echo $row[0] ?>"><?php echo $row[3] ?></option>	
-	<?php
+	if($url != '')
+	{
+		$sql = "INSERT INTO `pmc`.`news` (`contants`, `show_type`, `insdate`, `link`) VALUES ('$contants', 1, NOW(), '$url');";	
 	}
-	  ?>
-
-</select><br>
-<input type="hidden" name="regist" value="1" />
-<input type="hidden" name="parent_seq" value="<?php echo $parent_item_seq ?>" />
-<input type="hidden" name="childe_seq" value="<?php echo $chile_item_seq ?>" />
-<input class="save" type="submit" value="登録" />
-</form>
-<br>
-<h2>担当メンバー</h2>
-<table id="item_list" class="item_list" >
-	<tr>
-		<th class="tamidashi">メンバー</th>
-	</tr>
-	<?php
-		$sql = "SELECT m_user.name
-				FROM user_item 
-				JOIN m_user ON user_item.user_seq = m_user.user_seq  
-				WHERE user_item.child_item_seq = '$chile_item_seq'";
-		$result = mysql_query($sql);
-		while ($row = mysql_fetch_array($result))
-		{?>
-			<tr>
-				<td><?php echo $row[0] ?></td>
-			</tr>		 
-	<?php
-		}
-		mysql_free_result($result);	
-		?>
-</table>
-
-</div>
+	else
+	{
+		$sql = "INSERT INTO `pmc`.`news` (`contants`, `show_type`, `insdate`) VALUES ('$contants', 0, NOW());";	
+	}
 	
-<?php
-}
-?>
+	mysql_query($sql);
 
+?>
+お知らせを登録しました。
 </div>
 <!--/main-->
 

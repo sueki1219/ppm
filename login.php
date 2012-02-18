@@ -7,7 +7,18 @@
     require("lib/dbconect.php");
     $dbcn = DbConnect();
 
-    $sql = "SELECT user_seq, name, auth_seq FROM m_user WHERE user_id = '$id' AND pass = '$pass';";
+    $sql = "SELECT 
+    		user_seq, 
+    		name, 
+    		auth_seq, 
+    		m_user.team_seq, 
+    		m_autho_type.autho_type_name, 
+    		m_team.team_name 
+    		FROM m_user 
+    		JOIN m_team ON m_team.team_seq = m_user.team_seq 
+    		JOIN m_autho_type ON m_autho_type.autho_type_seq = m_user.auth_seq 
+    		WHERE user_id = '$id' 
+    		AND pass = '$pass';";
     if($type == '1')
     {
         $result = mysql_query($sql);
@@ -17,9 +28,15 @@
             $user_seq = $userresult[0];
             $name = $userresult[1];
             $auth_seq = $userresult[2];
+            $team_seq = $userresult[3];
+            $auth_name = $userresult[4];
+            $team_name = $userresult[5];
             setcookie("login[user_seq]",$user_seq);
             setcookie("login[name]",$name);
             setcookie("login[auth]",$auth_seq);
+            setcookie("login[team]",$team_seq);
+            setcookie("login[auth_name]",$auth_name);
+            setcookie("login[team_name]",$team_name);
             header("Location: index.php");
         }else
         {
