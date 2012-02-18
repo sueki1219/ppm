@@ -1,8 +1,30 @@
 <?php
-    //DB接続
-    require("lib/dbconect.php");
-    $dbcn = DbConnect();
-		
+//ログインチェック
+if(!isset($_COOKIE['login']))
+{
+    header("Location: login.php");
+}
+else
+{
+	foreach ($_COOKIE['login'] as $key => $value) 
+	{
+		switch ($key) {
+			case 'user_seq':
+				$login_user_seq = $value;
+				break;
+			case 'name':
+				$login_user_name = $value;
+				break;
+			case 'auth':
+				$login_user_auth = $value;
+				break;
+		}
+	}
+}
+
+//DB接続
+require("lib/dbconect.php");
+$dbcn = DbConnect();
 
 function computeDate($year, $month, $day, $addDays,$type) 
 {
@@ -157,7 +179,7 @@ $todate = $weeklisti[7];
 				DATE_FORMAT(schedule_end_date,'%Y年%m月%d日')
 				FROM user_item 
 				LEFT JOIN item_list ON item_list.parent_item_seq = user_item.parent_item_seq AND item_list.child_item_seq = user_item.child_item_seq 
-				WHERE user_item.user_seq = 1";
+				WHERE user_item.user_seq = $login_user_seq";
 		$result = mysql_query($sql);
 		while ($row = mysql_fetch_array($result))
 		{?>
@@ -194,7 +216,7 @@ $todate = $weeklisti[7];
 				JOIN m_approval_type ON m_approval_type.approval_type_seq = report.approval_flg 
 				WHERE DATE_FORMAT(report_date,'%Y-%m-%d') BETWEEN '$fromdate' AND '$todate' 
 				AND report.report_type_seq = 1
-				AND user_seq = 1
+				AND user_seq = $login_user_seq
 				ORDER BY report_date";
 		$result = mysql_query($sql);
 	    $date = getdate();
@@ -265,7 +287,7 @@ $todate = $weeklisti[7];
 				JOIN m_approval_type ON m_approval_type.approval_type_seq = report.approval_flg 
 				WHERE DATE_FORMAT(report_date,'%Y-%m-%d') BETWEEN '$fromdate' AND '$todate' 
 				AND report.report_type_seq = 2
-				AND user_seq = 1
+				AND user_seq = $login_user_seq
 				ORDER BY report_date";
 		$result = mysql_query($sql);
 		$reportcount = mysql_num_rows($result);

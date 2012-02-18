@@ -1,4 +1,27 @@
 <?php
+//ログインチェック
+if(!isset($_COOKIE['login']))
+{
+    header("Location: login.php");
+}
+else
+{
+	foreach ($_COOKIE['login'] as $key => $value) 
+	{
+		switch ($key) {
+			case 'user_seq':
+				$login_user_seq = $value;
+				break;
+			case 'name':
+				$login_user_name = $value;
+				break;
+			case 'auth':
+				$login_user_auth = $value;
+				break;
+		}
+	}
+}
+
 function computeDate($year, $month, $day, $addDays,$type) 
 {
     $baseSec = mktime(0, 0, 0, $month, $day, $year);//基準日を秒で取得
