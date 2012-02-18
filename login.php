@@ -20,16 +20,7 @@
             setcookie("login[user_seq]",$user_seq);
             setcookie("login[name]",$name);
             setcookie("login[auth]",$auth_seq);
-			//管理者と一般は別ページ
-            if($auth_seq == '1')
-            {
-                header("Location: index.php");
-            }
-            else
-            {
-                header("Location:bottom.php");
-                exit;
-            }
+            header("Location: index.php");
         }else
         {
             $msg = "ＩＤもしくはパスワードを確認してください";
